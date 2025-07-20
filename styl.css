@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'courier', monospace;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #081b29;
+    --second_bg-color: #0d2538;
+    --text-color: #ffffff;
+    --main-color: #00adb5;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.navbar a {
+    color: var(--text-color);
+    margin: 0 25px;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.home {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    position:fixed;
+    top: 60px;
+    width: 100%;
+  height: calc(100vh - 60px); /* full height minus header */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 9%;
+}
+
+.intro h4,
+.intro p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.home__content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.home__content .text-animate {
+    position: relative;
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+.btn-box {
+    margin-bottom: 1px;
+    
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.5s;
+    margin-top: 2rem;
+    display: inline-block;
+  padding: 12px 28px;
+  font-size: 16px;
+  background-color: #64ffda;
+  color: #0a192f;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 20px auto 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn-box::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    h
+}
+.social-icons {
+  position: fixed;        /* Use fixed to pin it to the bottom of the page */
+  bottom: 20px;           /* Distance from bottom */
+  left: 20px;             /* Optional: adjust left/right position */
+  width: auto;
+  display: flex;
+  gap: 20px;              /* Space between icons */
+  z-index: 1000;          /* Make sure it's on top of other content */
+}
+
+.social-icons a {
+  font-size: 32px;        /* Increase icon size */
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: black;         /* Hover color (LinkedIn blue) */
+}
+
+/* Custom color and hover effect for the email icon */
+.social-icons a[aria-label="Email"] i {
+  color: #ffb300;
+  transition: color 0.3s;
+}
+.social-icons a[aria-label="Email"]:hover i {
+  color: #fff;
+  background: linear-gradient(90deg, #ffb300 60%, #ff6f00 100%);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* Large decorative circles in the bottom left and right corners */
+.corner-circles.left {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 600px;
+  height: 350px;
+  pointer-events: none;
+  z-index: 1;
+}
+.corner-circles.right {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 600px;
+  height: 350px;
+  pointer-events: none;
+  z-index: 1;
+}
+.corner-circles .big-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+  border: 2px solid #b3d1f7;
+}
+.corner-circles.left .circle1 {
+  width: 400px;
+  height: 400px;
+  left: -120px;
+  bottom: -120px;
+  background: #b3d1f7;
+  opacity: 0.7;
+  z-index: 1;
+}
+.corner-circles.left .circle2 {
+  width: 300px;
+  height: 300px;
+  left: 120px;
+  bottom: -60px;
+  background: #b3d1f7;
+  opacity: 0.5;
+  z-index: 2;
+}
+.corner-circles.left .circle3 {
+  width: 220px;
+  height: 220px;
+  left: 220px;
+  bottom: 40px;
+  background: #b3d1f7;
+  opacity: 0.4;
+  z-index: 3;
+}
+.corner-circles.right .circle1 {
+  width: 400px;
+  height: 400px;
+  right: -120px;
+  bottom: -120px;
+  background: #b3d1f7;
+  opacity: 0.7;
+  z-index: 1;
+}
+.corner-circles.right .circle2 {
+  width: 300px;
+  height: 300px;
+  right: 120px;
+  bottom: -60px;
+  background: #b3d1f7;
+  opacity: 0.5;
+  z-index: 2;
+}
+.corner-circles.right .circle3 {
+  width: 220px;
+  height: 220px;
+  right: 220px;
+  bottom: 40px;
+  background: #b3d1f7;
+  opacity: 0.4;
+  z-index: 3;
+}
+
+/* Remove old bottom circles */
+.bottom-circles, .circle {
+  display: none !important;
+}
+
+/* Journey Section Styles */
+.journey-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 40px 20px;
+  min-height: 100vh;
+}
+.journey-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px; /* Reduced space below title */
+}
+.journey-title .highlight {
+  color: #1da1f2;
+}
+.journey-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.journey-column {
+  flex: 1 1 400px;
+  min-width: 320px;
+}
+.journey-column h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  font-weight: 700;
+  margin-top: 0; /* Remove space above Education */
+}
+.journey-card {
+  background: transparent;
+  border: 2px solid #1da1f2;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 22px;
+  color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.05);
+  transition: border-color 0.3s;
+}
+.journey-card:hover {
+  border-color: #00adb5;
+}
+.card-date {
+  font-size: 1.1rem;
+  color: #b3d1f7;
+  margin-bottom: 6px;
+  font-family: 'Roboto', monospace;
+}
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.card-desc {
+  font-size: 1.1rem;
+  color: #b3d1f7;
+}
+
+/* Skills Section Styles */
+.skills-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 40px 20px;
+  min-height: 100vh;
+}
+.skills-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.skills-title .highlight {
+  color: #1da1f2;
+}
+.skills-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.skills-column {
+  flex: 1 1 400px;
+  min-width: 320px;
+  background: rgba(13, 37, 56, 0.8);
+  border: none;
+  border-radius: 14px;
+  padding: 28px 24px 18px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04);
+}
+.skills-column h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  font-weight: 700;
+  margin-top: 0;
+}
+.skill-bar {
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 18px 22px 10px 22px;
+  margin-bottom: 22px;
+  color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.04);
+  position: relative;
+}
+.skill-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  display: inline-block;
+}
+.skill-percent {
+  float: right;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1da1f2;
+}
+.bar-bg {
+  width: 100%;
+  height: 14px;
+  background: #0d2538;
+  border-radius: 7px;
+  margin-top: 10px;
+  overflow: hidden;
+  border: none;
+}
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1da1f2 60%, #00adb5 100%);
+  border-radius: 7px 0 0 7px;
+  transition: width 0.8s cubic-bezier(.4,2.3,.3,1);
+}
+
+/* Projects Section Styles */
+.projects-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 40px 20px;
+  min-height: 100vh;
+}
+.projects-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.projects-title .highlight {
+  color: #1da1f2;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+}
+.project-card {
+  background: rgba(13, 37, 56, 0.9);
+  border-radius: 14px;
+  padding: 32px 24px 24px 24px;
+  color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 4px 16px 0 rgba(29,161,242,0.15);
+}
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1da1f2;
+}
+.project-desc {
+  font-size: 1.1rem;
+  color: #b3d1f7;
+  margin-bottom: 18px;
+}
+.project-link {
+  color: #fff;
+  background: linear-gradient(90deg, #1da1f2 60%, #00adb5 100%);
+  padding: 8px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+  align-self: flex-start;
+}
+.project-link:hover {
+  background: #fff;
+  color: #1da1f2;
+}
+
+/* Contacts Section Styles */
+.contacts-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 20px 40px 20px;
+  min-height: 100vh;
+}
+.contacts-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.contacts-title .highlight {
+  color: #1da1f2;
+}
+.contacts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+}
+.contact-card {
+  background: rgba(13, 37, 56, 0.9);
+  border-radius: 14px;
+  padding: 32px 36px;
+  color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  min-width: 180px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.contact-card i {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #1da1f2;
+  transition: color 0.2s;
+}
+.contact-card:hover {
+  background: #1da1f2;
+  color: #fff;
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 4px 16px 0 rgba(29,161,242,0.15);
+}
+.contact-card:hover i {
+  color: #fff;
+}
+
+/* Contacts Footer Styles */
+.contacts-footer {
+  text-align: center;
+  color: #b3d1f7;
+  font-size: 1.05rem;
+  margin-top: 48px;
+  padding-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+
